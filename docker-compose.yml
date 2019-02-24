@@ -1,0 +1,33 @@
+version: '2'
+
+volumes:
+  adv_postgres_data: {}
+  adv_postgres_backup: {}
+  adv_ipython_data: {}
+
+services:
+  postgres:
+    container_name: adv-server_postgres
+    image: postgres:11.2
+    volumes:
+      - adv_postgres_data:/var/lib/postgresql/data
+      - adv_postgres_backup:/backups
+      - ./backups:/backups
+    ports:
+      - "5432:5432"
+
+  django:
+    container_name: adv-server_django
+    build:
+      context: .
+      dockerfile: ./compose/django/Dockerfile
+    command: /start.sh
+    depends_on:
+      - postgres
+    volumes:
+      - ./advertisement-server:/app
+      - adv_ipython_data:/root/.ipython
+    ports:
+      - "8000:8000"
+    links:
+      - postgres
