@@ -30,9 +30,9 @@ SECRET_KEY = '^xyz4!drf%y=dl!l_tmidp2mbf7y$pdrfw-rvta%owvt8m%(*t'
 DEBUG = False
 
 if not DEBUG:
-    ALLOWED_HOSTS = [*]
+    ALLOWED_HOSTS = ['127.0.0.1', 'localhost', ]
 else:
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['*']
 
 # Application definition
 
