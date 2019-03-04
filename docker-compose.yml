@@ -28,6 +28,6 @@ services:
       - ./advertisement-server:/app
       - adv_ipython_data:/root/.ipython
     ports:
-      - "8000:8000"
+      - "80:8000"
     links:
       - postgres

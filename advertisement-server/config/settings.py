@@ -27,12 +27,9 @@ env.read_env()  # read .env file, if it exists
 SECRET_KEY = '^xyz4!drf%y=dl!l_tmidp2mbf7y$pdrfw-rvta%owvt8m%(*t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-if not DEBUG:
-    ALLOWED_HOSTS = ['127.0.0.1', 'localhost', ]
-else:
-    ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 

@@ -1,408 +1,168 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <header>
+<html lang="vi" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Cao Gừng Chính Hãng Mua Ở Đâu?</title>
+        <meta name="description" content="Cao Gừng Chính Hãng Mua Ở Đâu? Đến ngay Tổng Đại Lý Phân Phối Cao Gừng Thiên Nhiên Việt - ANN khu vực TPHCM để mua hàng chính hãng đảm bảo uy tín!" />
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/png" sizes="16x16" href="http://myphamkhanghy.com/img/upload/images/favicon.png" /><link href="css/bootstrap.min.css" rel="stylesheet" />
-        <meta name="google-site-verification" content="4Y8QUg_ceTKB-fyuqkz0xpWr48_Yikg0h-7mYbK1UKM" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="theme-color" content="#317EFB"/>
+        <meta name="google-site-verification" content="K9d7tO7kYSrEC7nCxO93o5f9rw2N09yEeYIPKDZ1dLM" />
+        <link rel="canonical" href="https://store.caogungdepdang.com/" />
+        <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
         <link href="{% static 'css/theme-landingpage.css' %}" rel="stylesheet" />
-        <link href="{% static 'css/animate.css' %}" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet" />
-
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-        <title>
-            Cao Gừng Tan Mỡ Bụng Chính Hãng - Giảm Cân Nhanh, An Toàn Hiệu Quả Cao
-        </title>
-        <meta property="og:title" content="Cao Gừng Tan Mỡ Bụng Chính Hãng - Giảm Cân Nhanh, An Toàn Hiệu Quả Cao" />
-        <meta name="og:type" />
-        <meta name="og:Image" content="http://caogungchinhhang.com/img/upload/images/landing-page/header_bg.png" />
-        <meta name="og:url" content="http://caogungchinhhang.com/" />
-        <meta name="og:description" content="Kem tan mỡ bụng cao gừng chính hãng. Đánh tan mỡ thừa các vùng bụng, đùi, tay. Giảm cân một cách hiệu quả nhanh chóng, an toàn." />
-        <meta name="description" content="Kem tan mỡ bụng cao gừng chính hãng. Đánh tan mỡ thừa các vùng bụng, đùi, tay. Giảm cân một cách hiệu quả nhanh chóng, an toàn." />
-        <meta property="fb:app_id" content="263538521002756" />
-
-        <!-- Connection to facebook page-->
-        <script>
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5&appId=274165153109839";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        </script>
-    </header>
+    </head>
     <body>
-        {% if success %}
-            <div id="warning_pop" class="modal fade modal_cs in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" style="display: block; padding-right: 10px;">
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <div class="pt-10 pb-10">
-                                <div id="ContentPlaceHolder1_sucess_mess" class="sucess_mess text-center">
-                                    </span>Đăng ký thành công. Tư vấn sẽ liên hệ với bạn trong thời gian sớm nhất!
-                                </div>
-                            </div>
-                            <input type="button" name="ctl00$ContentPlaceHolder1$bt_m_post" value="XÁC NHẬN" id="ContentPlaceHolder1_bt_m_post" class="bg_green">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {% endif %}
         <div id="wap">
-            <div id="section_0" class="pt-30">
+            <div id="section_0">
                 <div class="container">
                     <div class="text-center mb-30">
-                        <a href="/cao-gung-danh-tan-mo-giam-can-hieu-qua.html">
-                            <img src="{% static 'images/logo-landingpage.png'%}" />
+                        <a href="https://store.caogungdepdang.com">
+                            <img class="lazyload" data-src="{% static 'images/logo-landingpage.png' %}"/>
                         </a>
                     </div>
-                    <div class="title_header text-center font-bold c-w pb-30 animated bounce">
-                        <h1>GIẢM NGAY 3-10CM NGAY TẠI NHÀ</h1>
+                    <div class="title_header text-center font-bold c-w">
+                        <h1>CAO GỪNG ĐẸP DÁNG</h1>
                     </div>
-                    <div class="row animated bounceInDown">
-                        <div class="col-lg-6">
+                    <div class="row mb-30">
+                        <div class="col-lg-6 product-description">
                             <div class="box_info_pro">
-                                <p>Lấy lại eo - Thon dáng ngà</p>
-                                <span class="pb-25">Cao gừng - Kem tan mỡ giảm cân hiệu quả</span>
-                                <img src="{% static 'images/header_bg.png' %}"/>
-                                <div class="price_">380.000đ</div>
+                                <h2 class="h2_title">CAO GỪNG THIÊN NHIÊN VIỆT</h2>
+                                <p class="pb-25">Gần nữa năm nay, CAO GỪNG là sản phẩm làm đẹp rất được ưa chuộng trên thị trường.</p>
+                                <p class="pb-25">* Lưu ý: Kết quả tùy thuộc vào cơ địa của mỗi người.</p>
+                                <img class="lazyload" data-src="{% static 'images/header_bg.png' %}"/>
+                                <div class="price_">Giá: 380.000 vnd</div>
                                 <div class="des_h">
-                                    <p>An toàn - Hiệu Quả Vượt Trội</p>
+                                    <p class="instock">Còn hàng, Miễn phí vận chuyển</p>
                                 </div>
-                                <div class="more_">
-                                    <a href="tel:02862754999">HOTLINE: (02862) 754 999</a>
+                                <div class="more_ mt-30">
+                                    <a href="/gio-hang">MUA NGAY</a>
                                 </div>
-                            </div>    
+                            </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="p-100-0">
-                                <iframe width="100%" height="320" src="https://www.youtube.com/embed/fut74JgGIrg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="more_ mt-30">
-                                    <a href="#form_box">MUA NGAY</a>
-                                </div>
+                            <img class="lazyload" data-src="{% static 'product-images/cao-gung-tan-mo-logo-banner.png' %}"/>
+                            <div class="more_">
+                                <a href="tel:0914615408">HOTLINE: 0914.615.408</a>
                             </div>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
             </div>
-            <div id="section_01">
-                <div class="container">
-                    <div class="title_header size-36 text-center line-h40 mt-30 mb-30 animated bounceInLeft">
-                        TỰ TIN LẤY LẠI ngay VÒNG EO THON GỌN
-                        <div class="line"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="box_collum box_1">
-                                <img src="{% static 'images/img-1.jpg' %}" />
-                                <span>Giảm cân an toàn cho mẹ, giúp dưỡng da</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="box_collum box_1">
-                                <img src="{% static 'images/img-2.jpg' %}" />
-                                <span>Không cần phải ăn kiên, không phải vào phòng tập mỗi ngày.</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="box_collum box_1">
-                                <img src="{% static 'images/img-3.jpg' %}" />
-                                <span>Chỉ cần 30p mỗi ngày giảm ngay 3-5cm vòng eo giúp săn chắc hơn</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <div class="section_1">
-                <div class="imgsibar-1">
-                    <div class="container">
-                        <div class="mt-20 mb-30">
-                            <div class="row">
-                                <div class="col-lg-7">
-                                    <div class="title_header size-36 text-center line-h40 mt-20 mb-20 animated bounceInRight">
-                                        <span>CAO GỪNG – TAN MỠ HIỆU QUẢ  SẼ GIÚP BẠN GIẢI QUYẾT</span>
-                                    </div>  
-                                    <div class="bg_green_1 note content animated bounceInRight">
-                                        <p>- Loại bỏ lớp mỡ thừa dưới da</p>
-                                        <p>- Cải thiện vóc dáng thon gọn</p>
-                                        <p>- Ngăn chặn sự tang cân trở lại</p>
-                                        <p>- Cung cấp dưỡng chất giúp da săn chắc</p>
-                                        <p>- Hỗ trợ điều trị các vết nứt, rạn da sau khi sinh</p>
-                                    </div>
-                                    <span class="full_width size-16 text-center color-gray mt-20 mb-20 animated bounceInLeft">Sở hữu một làn da đẹp không khó, quan trọng bạn chưa có phương pháp phù hợp với mình. Cũng giống như các bạn, mình cũng từng gặp phải vô vàn vấn đề trên con đường làm đẹp</span>
-                                    <div class="ico_bot"></div>
-                                </div>
-                                <div class="col-lg-5">
-                                    <img src="{% static 'images/san-pham-cao-gung.png' %}" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="full_width pt-25 pb-25 text-center font-bold size-36 animated bounce">
-                <div class="container title_header">
-                    THÀNH PHẦN TỪ THIÊN NHIÊN - AN TOÀN CHO SỨC KHỎE
-                    <div class="line"></div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="full_width mt-20 mb-30 animated bounce">
-                    <img src="{% static 'images/thanh-phan-cao-gung.jpg' %}" />
-                </div>
-                <div class="text-center pb-25">
-                    <img src="{% static 'images/qua-tang.jpg' %}" />
-                </div>
-            </div>
-            <div class="buybutton borderBlinktwo animated bounce">
-                <a href="#form_box">ĐẶT HÀNG NGAY</a>
-            </div>
-            <p class="note_red text-center pt-15">Để sở hữu ngay những phần quà hấp dẫn, số lượng có hạn</p>
-            <div class="full_width mt-30 mb-30">
-            <hr />
-            <div id="section_01">
-                <div classs="section_2 full_width mb-30">
-                    <div class="imgsibar-2">
-                        <div class="container">
-                            <div class="title_header size-36 text-center line-h40 mt-20 animated bounceInRight">
-                                <span>HƯỚNG DẪN</span> SỬ DỤNG
-                            </div>
-                            <div class="mt-20 mt-20 p-0-50">
-                                <div class="bg_green note animated bounceInLeft">
-                                    <div class="content">
-                                        <p><b>Bước 1:</b> Thoa cao lên vùng da cần tan mỡ vào buổi sáng và tối, mỗi ngày 2 lần.</p>
-                                        <p><b>Bước 2:</b> Massage nhẹ nhàng kem trên vùng da khoảng 15-20 phút, để kem thẩm thấu vào sâu bên trong.</p>
-                                        <p><i><b>ĐẶT BIỆT:</b> Có thể kết hợp cùng dây đeo để đạt được hiệu quả gấp đôi.</i></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="">
-                    <div class="container">
-                        <div class="title_header size-36 text-center line-h40 mt-30">
-                            TẠI SAO <span>NÊN CHỌN CAO GỪNG</span>
-                        </div>
-                        <div class="mt-20 p-0-50">
-                            <div class="row">
-                                <div class="col-md-6 clear_left img_sp_tincay">
-                                    <img src="{% static 'images/cao-gung.png' %}"/>
-                                </div>
-                                <div class="col-md-6 nopadding">
-                                    <div class="divarow borderBlink">
-                                        <p>ĐIỂM NỔI BẬT CỦA SẢN PHẨM NÀY</p>
-                                        <span><i class="fa fa-check"></i> Vòng eo giảm từ 3 -> 5 cm ngay tại nhà.</span>
-                                        <span><i class="fa fa-check"></i> Ngăn chặn chảy xệ và chùng nhão của da.</span>
-                                        <span><i class="fa fa-check"></i> Hỗ trợ điều trị các vết sạn, nứt trên da. Đặt biệt đối với phụ nữ sau sinh.</span>
-                                        <span><i class="fa fa-check"></i> Cải thiện làn da săn chắc, khỏe mạnh hơn.</span>
-                                        <span><i class="fa fa-check"></i> Bảo đảm hàng 100% chính hãng, phát hiện hàng giả -> hoàn tiền gấp đôi.</span>
-                                        <span><i class="fa fa-check"></i> Được cấp giấy chứng nhận và kiểm tra mã vạch chống hàng giả, nhái từ BỘ CÔNG AN.</span>
-                                        <span><i class="fa fa-check"></i> Đổi trả ngay trong 7 ngày nếu gây kích ứng.</span>
-                                        <p>TẠI SAO BẠN PHẢI MUA HÀNG NGAY TRÊN TRANG CHÚNG TÔI?</p>
-                                        <span>- Hiện trên thị trường có rất nhiều hàng nháy và kém chất lượng, khi dùng gây chẵn những không hiệu quả mà nó còn mang lại hậu quả không lường trước được.</span>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>  
-                        
-                    </div>
-                </div>
-            </div>
-            <div id="section_fb" class="full_width">
-                <div class="imgsibar-1">
-                    <div class="container">
-                        <div class="title_header size-36 text-center line-h40 mt-40 mb-10">
-                            <span>MỘT SỐ PHẢN HỒI</span> CỦA KHÁCH HÀNG
-                        </div>
-                        <div class="pt-15 pb-10">
-                            <img class="p-0-50" src="{% static 'images/feedback_1.jpg' %}"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="full_width mt-30 mb-30">
-                <hr />
-            </div>
-            <div id="section_4" class="full_width">
-                <div class="imgsibar-1">
-                    <div class="container">
-                        <div class="title_header size-36 text-center line-h40 mt-20">
-                            <span>ĐÁNH GIÁ</span> CỦA NGƯỜI NỔI TIẾNG
-                        </div>
-                        <div class="mt-20 text-center p-0-50">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/DCxkxQNfz4s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="col-lg-4">
-                                    <img src="{% static 'images/kha-nhu-review.png' %}" />
-                                    Mèo thường không có thời gian để tập thể dục hay Yoga. Để giữ được thân hình cân đối Mèo đã dùng sản phẩm Cao Gừng Tan Mỡ. Mỗi ngày chỉ mất khoản 20-30 phút sáng và tối thoa Cao lên vùng mỡ thừa thôi mà giờ Mèo đã giảm được 5kg.
-                                    <div class="title_rev">
-                                        DIỄN VIÊN KHẢ NHƯ
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/VL9KL6u2sXg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="col-lg-4">
-                                    <img src="{% static 'images/kha-ly-review.png' %}" />
-                                    Các bạn có biết lý do vì sau Ly vẫn giữ được dáng không vì hiện tại ngày nào Ly cũng sử dụng Cao Gừng để giúp cho Ly không bị mỡ thừa và tăng cân. Mỗi ngày chỉ mất 10-20 phút thoa kem và massa thôi nhé.
-                                    <div class="title_rev">
-                                        DIỄN VIÊN KHA LY
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/3rCHBUTXoyw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="col-lg-4">
-                                    <img src="{% static 'images/cat-tuong-review.png' %}" />
-                                    Do tính chất công việc luôn bận rộn nên Tường thường không có thời gian cho việc thể thao. Đăng ký đi tập Yoga nhưng 8 năm Tường chưa đến 1 lần. Hiện Tường dùng Cao Gừng để giúp vòng eo trong thon gọng và săn chắc hơn.
-                                    <div class="title_rev">
-                                        MC - DIỄN VIÊN CÁT TƯỜNG
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="full_width mt-30 mb-30">
-                    <div class="col-lg-4">
-                        <div class="gift-1 bg-green-4 box-green">
-                            <p>Tư vấn miễn phí</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="gift-1 bg-green-5 box-green">
-                            <p>Giao hàng tận nơi</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="gift-1 bg-green-6 box-green">
-                            <p>Nhận hàng thanh toán</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="section_6" class="full_width">
+
+            <div class="full_width mt-20 mb-30">
                 <div class="container">
                     <div class="row">
-                        <form id="form-register" method="POST" action="{% url 'home' %}">
-                            <div class="col-lg-4">
-                                <div class="fb-page mt-20" 
-                                    data-tabs="timeline,events,messages"
-                                    data-href="https://www.facebook.com/KemTanMoCaoGungChinhHang/"
-                                    data-width="430" 
-                                    data-height="520"
-                                    data-hide-cover="false">
+                        <div class="col-md-4">
+                            <div class="col-inner">
+                                <div class="img has-hover x md-x lg-x y md-y lg-y">
+                                    <div class="img-inner dark">
+                                        <img class="lazyload" data-src="{% static 'images/combo-1-hop-cao-gung.jpg' %}"/>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-8">
-                                <div id="form_box" class="box pt-50 pb-30 text-center">
-                                    <div class="titlebox size-36">
-                                        NHANH TAY NHẬN NGAY ƯU ĐÃI
-                                    </div>
-                                    <div class="des">
-                                        Chỉ còn <span>5</span> phần quà trong ngày hôm nay
-                                    </div>
-                                    <ul class="coutdowntime mt-30">
-                                        <li><span id="days"></span>Ngày</li>
-                                        <li><span id="hours"></span>Giờ</li>
-                                        <li><span id="minutes"></span>Phút</li>
-                                        <li><span id="seconds"></span>Giây</li>
-                                    </ul>
-                                    <p>Thời gian Khuyến mãi</p>
-                                    <div id="ContentPlaceHolder1_updateprocess" class="border-form">
-                                        <div class="form_box">
-                                            <input
-                                                name="full_name"
-                                                type="text"
-                                                id="full_name"
-                                                placeholder="Họ và tên" />
-                                            <input
-                                                name="mobile_phone"
-                                                type="tel"
-                                                id="mobile_phone"
-                                                placeholder="Số điện thoại" />
-                                            <input
-                                                name="address"
-                                                type="text"
-                                                id="address"
-                                                placeholder="Địa chỉ" />
-                                            <textarea
-                                                name="note"
-                                                rows="2"
-                                                cols="20"
-                                                id="note"
-                                                placeholder="Ghi chú của bạn" >
-                                            </textarea>
-                                            <input
-                                                id="submit-button"
-                                                type="button"
-                                                value="ĐĂNG KÝ NGAY"
-                                                onclick="submitForm()"
-                                                class="bt_send" />
+                                <div class="pricing-table-wrapper">
+                                    <div class="pricing-table ux_price_table text-center box-shadow-3-hover">
+                                        <div class="pricing-table-header">
+                                            <div class="title uppercase strong">1 hộp Cao Gừng</div>
+                                            <div class="price is-xxlarge">380,000 vnd/hộp</div>
                                         </div>
-                                        <div class="note_ad">Địa chỉ: 440/7 Đường Cây Trâm, Phường 9, Gò Vấp, TPHCM</div>
-                                        <div class="note_f">* Lưu ý: Kết quả tùy thuộc vào cơ địa của mỗi người</div>
+                                        <div class="pricing-table-items items">
+                                            <div class="bullet-item"><span class="text">Dùng 1 tháng</span></div>
+                                            <div class="bullet-item"><span class="text">Miễn phí giao hàng</span></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-inner featured-table">
+                                <div class="img has-hover x md-x lg-x y md-y lg-y">
+                                    <div class="img-inner dark">
+                                        <img class="lazyload" data-src="{% static 'images/combo-2-hop-cao-gung.jpg' %}"/>
+                                    </div>
+                                </div>
+                                <div class="pricing-table-wrapper">
+                                    <div class="pricing-table ux_price_table text-center box-shadow-3-hover">
+                                        <div class="pricing-table-header">
+                                            <div class="title uppercase strong">Combo 2 Hộp Cao Gừng</div>
+                                            <div class="price is-xxlarge">380,000 vnd/hộp</div>
+                                        </div>
+                                        <div class="pricing-table-items items">
+                                            <div class="bullet-item"><span class="text">Dùng 2 tháng</span></div>
+                                            <div class="bullet-item"><span class="text">Miễn phí giao hàng</span></div>
+                                            <div class="bullet-item"><span class="text">Tặng 1 đai nịt bụng 180.000 vnd</span></div>
+                                            <div class="bullet-item"><span class="text strong">*Khuyên chọn</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-inner">
+                                <div class="img has-hover x md-x lg-x y md-y lg-y">
+                                    <div class="img-inner dark">
+                                        <img class="lazyload" data-src="{% static 'images/combo-2-hop-cao-gung.jpg' %}"/>
+                                    </div>
+                                </div>
+                                <div class="pricing-table-wrapper">
+                                    <div class="pricing-table ux_price_table text-center box-shadow-3-hover">
+                                        <div class="pricing-table-header">
+                                            <div class="title uppercase strong">Combo 3 hộp Cao Gừng</div>
+                                            <div class="price is-xxlarge">305,000 vnd/hộp</div>
+                                        </div>
+                                        <div class="pricing-table-items items">
+                                            <div class="bullet-item is-disabled"><span class="text">Giá Gốc 380,000 vnd /Gram</span></div>
+                                            <div class="bullet-item"><span class="text">Dùng 3 tháng</span></div>
+                                            <div class="bullet-item"><span class="text strong">Tính ngay giá sỉ</span></div>
+                                            <div class="bullet-item"><span class="text">Miễn phí giao hàng</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div id="section_6" class="full_width pt-30 pb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="note_ad"><p>Địa chỉ: 68 Đường C12, Phường 13, Tân Bình, TP.HCM</p></div>
+                            <div class="note_ad"><p>Điện thoại: 0914.615.408 - 0915.400.401</p></div>
+                            <div class="note_ad"><p>Email: tranyenngoc9x@gmail.com</p></div>
+                        </div>
+                        <div class="col-lg-4">
+                            <ul class="menu">
+                                <li><a href="https://store.caogungdepdang.com" rel="nofollow">Trang chủ</a></li>
+                                <li><a href="https://store.caogungdepdang.com/chinh-sach-van-chuyen" rel="nofollow">Chính sách vận chuyển</a></li>
+                                <li><a href="https://store.caogungdepdang.com/chinh-sach-doi-tra" rel="nofollow">Chính sách đổi trả hàng</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <script>
-            const second = 1000,
-            minute = second * 60,
-            hour = minute * 60,
-            day = hour * 24;
-
-            let countDown = new Date('Feb 30, 2019 00:00:00').getTime(),
-            x = setInterval(function () {
-
-                let now = new Date().getTime(),
-                    distance = countDown - now;
-
-                document.getElementById('days').innerText = Math.floor(distance / (day)),
-                    document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
-                    document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
-                    document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
-            }, second)
-
-            function disableBtn(btnID, newText) {
-                var btn = document.getElementById(btnID);
-                    setTimeout("setImage('"+btnID+"')", 10);
-                    btn.disabled = true;
-                    btn.value = newText;
-            }
-
-            function setImage(btnID) {
-                var btn = document.getElementById(btnID);
-                btn.style.cursor = 'no-drop';
-            }
-
             function submitForm(){
                 document.getElementById("form-register").submit();
             }
+        </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/plugins/jquery.lazy.youtube.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            $(function() {
+                $('.lazyload').lazy();
+                $("iframe[data-src]").Lazy();
+            });
         </script>
     </body>
 </html>
