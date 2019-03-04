@@ -4,7 +4,7 @@ from model_utils import Choices
 # Create your models here.
 class Order(models.Model):
     STATUS_TYPE = Choices(
-        ('cx', u'Chờ xác định'),
+        ('cx', u'Chờ xác nhận'),
         ('dx', u'Đã xác nhận'),
         ('dg', u'Đã gửi đi'),
         ('h', u'Hủy'),
