@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="vi" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Cao Gừng Đẹp Dáng - Chính Sách Đổi Trả</title>
+        <meta name="description" content="Cao Gừng Đẹp Dáng - Chính Sách Vận Chuyển" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="theme-color" content="#317EFB"/>
+        <meta name="google-site-verification" content="K9d7tO7kYSrEC7nCxO93o5f9rw2N09yEeYIPKDZ1dLM" />
+        <link rel="canonical" href="https://store.caogungdepdang.com/chinh-sach-doi-tra" />
+        <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/theme-landingpage.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="wap">
+            <div id="section_0" class="pb-30">
+                <div class="container">
+                    <div class="text-center mb-30">
+                        <a href="https://store.caogungdepdang.com">
+                            <img class="lazyload" data-src="{% static 'images/logo-landingpage.png' %}"/>
+                        </a>
+                    </div>
+                    <div class="title_header text-center font-bold c-w">
+                        <h1>GIỎ HÀNG</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="full_width pb-25 text-center size-36">
+                <div class="container">
+                    <div class="row">
+                        <form id="form-register" method="POST" action="{% url 'home' %}">
+                            <div class="col-lg-6">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Hình</th>
+                                            <th>Sản phẩm</th>
+                                            <th>Giá</th>
+                                            <th>Mua</th>
+                                            <th>Tổng</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Hình</td>
+                                            <td>Sản phẩm</td>
+                                            <td>Giá</td>
+                                            <td>Mua</td>
+                                            <td>Tổng</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-lg-6">
+                                <div id="form_box" class="box pt-50 pb-30 text-center">
+                                    <div class="size-36">
+                                        THÔNG TIN ĐẶT HÀNG
+                                    </div>
+                                    <div id="ContentPlaceHolder1_updateprocess" class="border-form">
+                                        <div class="form_box pb-30">
+                                            <input name="full_name" type="text" id="full_name" placeholder="Họ và tên" />
+                                            <input name="mobile_phone" type="tel" id="mobile_phone" placeholder="Số điện thoại" />
+                                            <input name="address" type="text" id="address" placeholder="Địa chỉ" />
+                                            <textarea name="note" rows="2" cols="20" id="note" placeholder="Ghi chú của bạn"></textarea>
+                                            <p class="mt-15">Tổng đơn hàng: 380.000 vnd</p>
+                                            <p>Hình thức thanh toán: Giao hàng thanh toán tận nơi COD</p>
+                                            <p>Phí vận chuyển: Miễn phí</p>
+                                            <input id="submit-button" type="button" value="MUA NGAY" onclick="submitForm()" class="bt_send" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="section_6" class="full_width">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="note_ad"><p>Địa chỉ: 68 Đường C12, Phường 13, Tân Bình, TP.HCM</p></div>
+                            <div class="note_ad"><p>Điện thoại: 0914.615.408 - 0915.400.401</p></div>
+                            <div class="note_ad"><p>Email: tranyenngoc9x@gmail.com</p></div>
+                        </div>
+                        <div class="col-lg-4">
+                            <ul class="menu">
+                            	<li><a href="https://store.caogungdepdang.com" rel="nofollow">Trang chủ</a></li>
+                                <li><a href="https://store.caogungdepdang.com/chinh-sach-van-chuyen" rel="nofollow">Chính sách vận chuyển</a></li>
+                                <li><a href="https://store.caogungdepdang.com/chinh-sach-doi-tra" rel="nofollow">Chính sách đổi trả hàng</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/plugins/jquery.lazy.youtube.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            $(function() {
+                $('.lazyload').lazy();
+                $("iframe[data-src]").Lazy();
+            });
+        </script>
+    </body>
+</html>
