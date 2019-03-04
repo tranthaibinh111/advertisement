@@ -33,7 +33,8 @@
             <div class="full_width pb-25 text-center size-36">
                 <div class="container">
                     <div class="row">
-                        <form id="form-register" method="POST" action="{% url 'home' %}">
+                        <form id="form-register" method="POST" action="{% url 'giohang' sp_id %}">
+                            {% csrf_token %}
                             <div class="col-lg-6">
                                 <table class="table">
                                     <thead>
@@ -47,11 +48,21 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Hình</td>
-                                            <td>Sản phẩm</td>
-                                            <td>Giá</td>
-                                            <td>Mua</td>
-                                            <td>Tổng</td>
+                                            <td>
+                                                <img class="lazyload"
+                                                     data-src="{{ product.image.path }}"/>
+                                            </td>
+                                            <td>{{ product.name }}</td>
+                                            <td>{{ product.price }} vnd/hộp</td>
+                                            <td><input name="amount"
+                                                       type="number"
+                                                       id="amount"
+                                                       placeholder="Số lượng" />
+                                            </td>
+                                            <td><input name="total_price"
+                                                       type="money"
+                                                       id="total_price"
+                                                       placeholder="Tổng tiền" /></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -70,7 +81,7 @@
                                             <p class="mt-15">Tổng đơn hàng: 380.000 vnd</p>
                                             <p>Hình thức thanh toán: Giao hàng thanh toán tận nơi COD</p>
                                             <p>Phí vận chuyển: Miễn phí</p>
-                                            <input id="submit-button" type="button" value="MUA NGAY" onclick="submitForm()" class="bt_send" />
+                                            <input id="submit-button" type="submit" value="MUA NGAY" onclick="submitForm()" class="bt_send" />
                                         </div>
                                     </div>
                                 </div>

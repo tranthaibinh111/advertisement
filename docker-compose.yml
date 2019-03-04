@@ -7,6 +7,7 @@ volumes:
 
 services:
   postgres:
+    env_file: ./advertisement-server/config/.env
     container_name: adv-server_postgres
     image: postgres:11.2
     volumes:
@@ -28,6 +29,6 @@ services:
       - ./advertisement-server:/app
       - adv_ipython_data:/root/.ipython
     ports:
-      - "80:8000"
+      - "8000:8000"
     links:
       - postgres
