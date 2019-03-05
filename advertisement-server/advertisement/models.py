@@ -15,7 +15,7 @@ class Product(models.Model):
 
 class Customer(models.Model):
     full_name = models.CharField(max_length=100)
-    mobile_phone = models.CharField(max_length=20, unique=True)
+    mobile_phone = models.CharField(max_length=20)
     address = models.CharField(max_length=255)
     create_date = models.DateTimeField(auto_now_add=True)
 
@@ -42,4 +42,4 @@ class Order(models.Model):
     def __str__(self):
         if self.customer:
             return "{} SDT: {}".format(self.customer.full_name, self.customer.mobile_phone)
-        return None
+        return ''
