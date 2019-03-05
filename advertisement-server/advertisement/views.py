@@ -30,27 +30,37 @@ def giohang(request, sp_id):
     try:
         product = Product.objects.get(pk=sp_id)
     except Product.DoesNotExist:
-        return redirect(home)
+        return redirect('home')
+
+    context = {
+        'success': success,
+        'product': product,
+        'sp_id': sp_id
+    }
 
     if request.method == 'POST':
         customer_form = CustomerForm(request.POST)
-        if customer_form.is_valid():
-            customer = Customer(**customer_form.cleaned_data)
-            customer.save()
-
         order_form = OrderForm(request.POST)
-        if order_form.is_valid():
+
+        if customer_form.is_valid() and order_form.is_valid():
+            customer_data = Customer(**customer_form.cleaned_data)
+            customer = Customer.objects.filter(
+                mobile_phone=customer_data.mobile_phone
+            )
+            if not customer.exist():
+                customer = customer_data.save()
+            else:
+                customer = customer.first()
+
             order = Order(**order_form.cleaned_data)
             order.product = product
-            order.customer = product
+            order.customer = customer
             order.status = Order.STATUS_TYPE.cx
             order.save()
 
-        success = True
-    context = {
-        'success': success,
-        'product': product
-    }
+        context.update({'success': True})
+
+        return redirect('giohang', sp_id)
 
     return render(request, 'gio-hang.html', context)
 
