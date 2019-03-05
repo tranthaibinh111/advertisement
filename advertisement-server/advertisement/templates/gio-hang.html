@@ -16,6 +16,23 @@
         <link href="{% static 'css/theme-landingpage.css' %}" rel="stylesheet" />
     </head>
     <body>
+        {% if success %}
+            <div id="warning_pop" class="modal fade modal_cs in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" style="display: block; padding-right: 10px;">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="pt-10 pb-10">
+                                <div id="ContentPlaceHolder1_sucess_mess" class="sucess_mess text-center">
+                                    Đăng ký thành công. Nhân viên tư vấn sẽ liên hệ với bạn trong thời gian sớm nhất!
+                                </div>
+                            </div>
+                            <input type="button" name="submitConfirm" value="XÁC NHẬN" id="submit_confirm" class="bg_green">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
         <div id="wap">
             <div id="section_0" class="pb-30">
                 <div class="container">
@@ -50,7 +67,7 @@
                                         <tr>
                                             <td>
                                                 <img class="lazyload"
-                                                     data-src="{{ product.image.url }}"/>
+                                                     data-src="/{{ product.image.url }}"/>
                                             </td>
                                             <td>{{ product.name }}</td>
                                             <td>{{ product.price }} vnd/hộp</td>

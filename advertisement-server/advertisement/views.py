@@ -47,7 +47,7 @@ def giohang(request, sp_id):
             customer = Customer.objects.filter(
                 mobile_phone=customer_data.mobile_phone
             )
-            if not customer.exist():
+            if not customer.exists():
                 customer = customer_data.save()
             else:
                 customer = customer.first()
@@ -59,8 +59,6 @@ def giohang(request, sp_id):
             order.save()
 
         context.update({'success': True})
-
-        return redirect('giohang', sp_id)
 
     return render(request, 'gio-hang.html', context)
 
