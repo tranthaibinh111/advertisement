@@ -9,35 +9,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="theme-color" content="#317EFB"/>
         <meta name="google-site-verification" content="K9d7tO7kYSrEC7nCxO93o5f9rw2N09yEeYIPKDZ1dLM" />
-        <link rel="canonical" href="https://store.caogungdepdang.com/chinh-sach-doi-tra" />
         <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
         <link href="{% static 'css/theme-landingpage.css' %}" rel="stylesheet" />
     </head>
     <body>
-        {% if success %}
-            <div id="warning_pop" class="modal fade modal_cs in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" style="display: block; padding-right: 10px;">
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <div class="pt-10 pb-10">
-                                <div id="ContentPlaceHolder1_sucess_mess" class="sucess_mess text-center">
-                                    Đăng ký thành công. Nhân viên tư vấn sẽ liên hệ với bạn trong thời gian sớm nhất!
-                                </div>
-                            </div>
-                            <input type="button" name="submitConfirm" value="XÁC NHẬN" id="submit_confirm" class="bg_green">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {% endif %}
         <div id="wap">
+
             <div id="section_0" class="pb-30">
                 <div class="container">
                     <div class="text-center mb-30">
-                        <a href="https://store.caogungdepdang.com">
+                        <a href="/">
                             <img class="lazyload" data-src="{% static 'images/logo-landingpage.png' %}"/>
                         </a>
                     </div>
@@ -47,17 +30,20 @@
                 </div>
             </div>
 
-            <div class="full_width pb-25 text-center size-36">
+            <div class="full_width mt-15 pb-25 text-center">
                 <div class="container">
-                    <div class="row">
-                        <form id="form-register" method="POST" action="{% url 'giohang' sp_id %}">
+                    <form id="form-register" method="POST" action="{% url 'giohang' sp_id %}">
+                        <div class="row">
                             {% csrf_token %}
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
+                                <div class="size-36">
+                                    SẢN PHẨM
+                                </div>
                                 <table class="table">
                                     <thead>
                                         <tr>
                                             <th>Hình</th>
-                                            <th>Sản phẩm</th>
+                                            <th>SP</th>
                                             <th>Giá</th>
                                             <th>Mua</th>
                                             <th>Tổng</th>
@@ -70,20 +56,28 @@
                                                      data-src="/{{ product.image.url }}"/>
                                             </td>
                                             <td>{{ product.name }}</td>
-                                            <td>{{ product.price }} vnd/hộp</td>
+                                            <td>{{ product.price }}</td>
                                             <td><input name="amount"
                                                        type="number"
                                                        id="amount"
-                                                       placeholder="Số lượng" />
+                                                       placeholder="Số lượng"
+                                                       value ="1" 
+                                                       data-value="{{ product.price }}"
+                                                       min="1"
+                                                       class="amount-input" />
                                             </td>
                                             <td><input name="total_price"
                                                        type="money"
                                                        id="total_price"
-                                                       placeholder="Tổng tiền" /></td>
+                                                       placeholder="Tổng tiền"
+                                                       value="{{ product.price }}" 
+                                                       class="total-input" /></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-lg-6">
                                 <div id="form_box" class="box pt-50 pb-30 text-center">
                                     <div class="size-36">
@@ -91,53 +85,102 @@
                                     </div>
                                     <div id="ContentPlaceHolder1_updateprocess" class="border-form">
                                         <div class="form_box pb-30">
-                                            <input name="full_name" type="text" id="full_name" placeholder="Họ và tên" />
-                                            <input name="mobile_phone" type="tel" id="mobile_phone" placeholder="Số điện thoại" />
-                                            <input name="address" type="text" id="address" placeholder="Địa chỉ" />
-                                            <textarea name="note" rows="2" cols="20" id="note" placeholder="Ghi chú của bạn"></textarea>
-                                            <p class="mt-15">Tổng đơn hàng: 380.000 vnd</p>
-                                            <p>Hình thức thanh toán: Giao hàng thanh toán tận nơi COD</p>
-                                            <p>Phí vận chuyển: Miễn phí</p>
-                                            <input id="submit-button" type="submit" value="MUA NGAY" onclick="submitForm()" class="bt_send" />
+                                            <input name="full_name" type="text" id="full_name" placeholder="Họ tên (bắt buộc)" />
+                                            <input name="mobile_phone" type="tel" id="mobile_phone" placeholder="Điện thoại (bắt buộc)" />
+                                            <input name="address" type="text" id="address" placeholder="Địa chỉ (bắt buộc)" />
+                                            <textarea name="note" rows="2" cols="20" id="note" placeholder="Ghi chú (không bắt buộc)"></textarea>
+                                            <a href="javascript:;" id="submit-button" onclick="submitForm()" class="bt_send" />MUA NGAY</a>
+                                            <p class="mt-15"><a href="/chinh-sach-doi-tra" target="_blank">Xem chính sách trả hàng và hoàn tiền</a></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                            <div class="col-lg-6">
+                                <div class="pt-50">
+                                    <div class="pb-15 size-36">
+                                        TỔNG ĐƠN HÀNG
+                                    </div>
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Thành tiền:</strong></td>
+                                                <td><span class="total-order">{{ product.price }}</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Hình thức thanh toán:</strong></td>
+                                                <td>Thanh toán khi nhận hàng (COD)</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Phí vận chuyển:</strong></td>
+                                                <td>Miễn phí</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Tổng tiền đơn hàng:</strong></td>
+                                                <td><span class="total-order">{{ product.price }}</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
 
             <div id="section_6" class="full_width">
-                <div class="container">
+                <div class="container pt-30 pb-30">
                     <div class="row">
-                        <div class="col-lg-4">
-                            <div class="note_ad"><p>Địa chỉ: 68 Đường C12, Phường 13, Tân Bình, TP.HCM</p></div>
-                            <div class="note_ad"><p>Điện thoại: 0914.615.408 - 0915.400.401</p></div>
-                            <div class="note_ad"><p>Email: tranyenngoc9x@gmail.com</p></div>
+                        <div class="col-lg-6">
+                            <div class="note_ad">
+                                <p>Tổng đại lý phân phối Cao Gừng công ty Thiên Nhiên Việt</p>
+                                <p>Địa chỉ: 68 Đường C12, Phường 13, Tân Bình, TP.HCM</p>
+                                <p>Điện thoại: 0914.615.408 - 0915.400.401</p>
+                                <p>Email: tranyenngoc9x@gmail.com</p>
+                            </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-6">
                             <ul class="menu">
-                            	<li><a href="https://store.caogungdepdang.com" rel="nofollow">Trang chủ</a></li>
-                                <li><a href="https://store.caogungdepdang.com/chinh-sach-van-chuyen" rel="nofollow">Chính sách vận chuyển</a></li>
-                                <li><a href="https://store.caogungdepdang.com/chinh-sach-doi-tra" rel="nofollow">Chính sách đổi trả hàng</a></li>
+                                <li><a href="/" rel="nofollow">Trang chủ</a></li>
+                                <li><a href="/chinh-sach-doi-tra" rel="nofollow">Chính sách trả hàng và hoàn tiền</a></li>
+                                <li><a href="/chinh-sach-van-chuyen" rel="nofollow">Chính sách vận chuyển</a></li>
+                                <li><a href="/dieu-khoan-dieu-kien-thanh-toan" rel="nofollow">Điều khoản và điều kiện thanh toán</a></li>
                             </ul>
-                        </div>
-                        <div class="col-lg-4">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/plugins/jquery.lazy.youtube.min.js"></script>
         <script type="text/javascript" charset="utf-8">
             $(function() {
                 $('.lazyload').lazy();
-                $("iframe[data-src]").Lazy();
+                $('iframe[data-src]').Lazy();
             });
+
+            $(document).ready(function(){
+                $('#amount').on('change', function() {
+                    var price = $(this).attr('data-value');
+                    var amount = $(this).val();
+                    $('#total_price').val(price * amount);
+                    $('.total-order').text(price * amount);
+                }); 
+            });
+
+            function submitForm() {
+                var full_name = $('#full_name').val();
+                var mobile_phone = $('#mobile_phone').val();
+                var address = $('#address').val();
+
+                if(full_name == "" || mobile_phone == "" || address == "") {
+                    alert('Vui lòng điền đầy đủ thông tin bắt buộc!');
+                }
+                else {
+                    $('#form-register').submit();
+                }
+            }
         </script>
     </body>
 </html>
