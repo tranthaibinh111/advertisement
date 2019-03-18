@@ -7,23 +7,14 @@ from .forms import CustomerForm, OrderForm
 # Create your views here.
 @csrf_exempt
 def home(request):
-    success = False
-    if request.method == 'POST':
-        order_form = OrderForm(request.POST)
-        if order_form.is_valid():
-            order = Order(**order_form.cleaned_data)
-            order.status = Order.STATUS_TYPE.cx
 
-            order_old = Order.objects.filter(mobile_phone=order.mobile_phone)
-            if not order_old.exists():
-                order.save()
-                success = True
+    return render(request, 'index.html')
+
+def product(request, sku, slug):
     context = {
-        'success': success,
+        'sku': sku,
     }
-
     return render(request, 'index.html', context)
-
 
 def giohang(request, sp_id):
     success = False
@@ -47,8 +38,10 @@ def giohang(request, sp_id):
             customer = Customer.objects.filter(
                 mobile_phone=customer_data.mobile_phone
             )
+
             if not customer.exists():
                 customer = customer_data.save()
+                customer = customer_data
             else:
                 customer = customer.first()
 
@@ -57,39 +50,33 @@ def giohang(request, sp_id):
             order.customer = customer
             order.status = Order.STATUS_TYPE.cx
             order.save()
-
-        context.update({'success': True})
+            return redirect('hoantat', or_id = order.id)
 
     return render(request, 'gio-hang.html', context)
 
-
-def thanhtoan(request):
+def hoantat(request, or_id):
+    try:
+        order = Order.objects.get(pk=or_id)
+    except Order.DoesNotExist:
+        return redirect('home')
+    
     context = {
         'success': 'success',
-    }
-
-    return render(request, 'thanh-toan.html', context)
-
-
-def hoantat(request):
-    context = {
-        'success': 'success',
+        'order': order
     }
 
     return render(request, 'hoan-tat.html', context)
 
 
 def vanchuyen(request):
-    context = {
-        'success': 'success',
-    }
 
-    return render(request, 'chinh-sach-van-chuyen.html', context)
+    return render(request, 'chinh-sach-van-chuyen.html')
 
 
 def doitra(request):
-    context = {
-        'success': 'success',
-    }
 
-    return render(request, 'chinh-sach-doi-tra.html', context)
+    return render(request, 'chinh-sach-doi-tra.html')
+
+def dieukhoanthanhtoan(request):
+
+    return render(request, 'dieu-khoan-dieu-kien-thanh-toan.html')

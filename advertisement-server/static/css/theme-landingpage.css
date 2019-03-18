@@ -1,5 +1,30 @@
-﻿.table {
+﻿a {
+    color: #ff8400;
+}
+a:hover {
+    color: #aa5b05;
+}
+.sku {
+    text-transform: uppercase!important;
+}
+.is-disabled {
+    text-decoration: line-through;
+}
+.amount-input {
+    width: 40px;
+}
+.total-input {
+    width: 60px;
+    pointer-events:none;
+}
+.table {
     font-size: 15px;
+}
+.table img {
+    width: 100px;
+}
+.table td {
+    text-align: left;
 }
 .pricing-table {
     background-color: #FFF;
@@ -54,7 +79,7 @@ img
 	max-width:100%;
 }
 .product-description {
-    background: #000000d6;
+    background: #0000007d;
     padding: 15px 0 30px 0; 
 }
 .h2_title {
@@ -89,7 +114,6 @@ img
 }
 .note_ad
 {
-	text-align: center;
     color: #fff;
     font-size: 18px;
 }
@@ -968,7 +992,6 @@ ul.info-tabs_webstep a {
     height: 32px;
 }
 .ico_bot {
-    background-image: url(../images/jaltdhby7sw914cwiurz.png);
     background-position: center center;
     background-repeat: no-repeat;
     margin-top: 35px;
@@ -1254,9 +1277,6 @@ hr {
 .content_3 {
     background: #f6ca0a;
 }
-#section_01 {
-    background: url('../images/zxjlyakbcxhxijw4cnu5.png') no-repeat center
-}
 .imgsibar-1 {
     background: url('../images/7-ngay/imgsibar-1.jpg') no-repeat right;
 }
@@ -1298,8 +1318,7 @@ hr {
 }
 #section_6 {
     display: block;
-    background-image: url('../images/nen-1535515659.jpg');
-    background-color: rgba(255,255,255,1);
+    background-color: #484848;
     background-origin: content-box;
     background-size: cover;
     background-attachment: scroll;
